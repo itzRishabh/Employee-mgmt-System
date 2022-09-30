@@ -4,7 +4,9 @@
  */
 package Interface;
 
+import Model.Employee;
 import Model.EmployeeHistory;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,16 +45,16 @@ public class create_employee_panel extends javax.swing.JPanel {
         lblemail = new javax.swing.JLabel();
         txtname = new javax.swing.JTextField();
         txte_id = new javax.swing.JTextField();
-        txt_email = new javax.swing.JTextField();
+        txtemail = new javax.swing.JTextField();
         txtage = new javax.swing.JTextField();
-        txt_contact = new javax.swing.JTextField();
+        txtcontact = new javax.swing.JTextField();
         txtgender = new javax.swing.JTextField();
-        txt_position = new javax.swing.JTextField();
+        txtposition = new javax.swing.JTextField();
         txtteam_info = new javax.swing.JTextField();
         txtdate = new javax.swing.JTextField();
-        txtlabel = new javax.swing.JTextField();
+        txtlevel = new javax.swing.JTextField();
         lblteam_info1 = new javax.swing.JLabel();
-        txt_email1 = new javax.swing.JTextField();
+        txtphoto = new javax.swing.JTextField();
         btnsave = new javax.swing.JButton();
 
         lbltitle.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -73,7 +75,7 @@ public class create_employee_panel extends javax.swing.JPanel {
 
         lblteam_info.setText("Team Info");
 
-        lbl_position.setText("Position");
+        lbl_position.setText("Photo");
 
         lblcontact.setText("Contact_NO");
 
@@ -91,9 +93,9 @@ public class create_employee_panel extends javax.swing.JPanel {
             }
         });
 
-        txt_email.addActionListener(new java.awt.event.ActionListener() {
+        txtemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_emailActionPerformed(evt);
+                txtemailActionPerformed(evt);
             }
         });
 
@@ -103,9 +105,9 @@ public class create_employee_panel extends javax.swing.JPanel {
             }
         });
 
-        txt_contact.addActionListener(new java.awt.event.ActionListener() {
+        txtcontact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_contactActionPerformed(evt);
+                txtcontactActionPerformed(evt);
             }
         });
 
@@ -115,9 +117,9 @@ public class create_employee_panel extends javax.swing.JPanel {
             }
         });
 
-        txt_position.addActionListener(new java.awt.event.ActionListener() {
+        txtposition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_positionActionPerformed(evt);
+                txtpositionActionPerformed(evt);
             }
         });
 
@@ -133,17 +135,17 @@ public class create_employee_panel extends javax.swing.JPanel {
             }
         });
 
-        txtlabel.addActionListener(new java.awt.event.ActionListener() {
+        txtlevel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtlabelActionPerformed(evt);
+                txtlevelActionPerformed(evt);
             }
         });
 
         lblteam_info1.setText("Position Title");
 
-        txt_email1.addActionListener(new java.awt.event.ActionListener() {
+        txtphoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_email1ActionPerformed(evt);
+                txtphotoActionPerformed(evt);
             }
         });
 
@@ -203,12 +205,12 @@ public class create_employee_panel extends javax.swing.JPanel {
                     .addComponent(txtage)
                     .addComponent(txtgender)
                     .addComponent(txtdate)
-                    .addComponent(txtlabel)
+                    .addComponent(txtlevel)
                     .addComponent(txtteam_info)
-                    .addComponent(txt_position)
-                    .addComponent(txt_contact)
-                    .addComponent(txt_email)
-                    .addComponent(txt_email1))
+                    .addComponent(txtposition)
+                    .addComponent(txtcontact)
+                    .addComponent(txtemail)
+                    .addComponent(txtphoto))
                 .addGap(205, 205, 205))
             .addGroup(layout.createSequentialGroup()
                 .addGap(302, 302, 302)
@@ -243,7 +245,7 @@ public class create_employee_panel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbl_level)
-                    .addComponent(txtlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtlevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtteam_info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,19 +253,19 @@ public class create_employee_panel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblteam_info1)
-                    .addComponent(txt_position, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtposition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblcontact, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcontact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblemail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_position)
-                    .addComponent(txt_email1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtphoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addComponent(btnsave)
                 .addContainerGap(128, Short.MAX_VALUE))
@@ -278,25 +280,25 @@ public class create_employee_panel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txte_idActionPerformed
 
-    private void txt_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_emailActionPerformed
+    private void txtemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtemailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_emailActionPerformed
+    }//GEN-LAST:event_txtemailActionPerformed
 
     private void txtageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtageActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtageActionPerformed
 
-    private void txt_contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_contactActionPerformed
+    private void txtcontactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_contactActionPerformed
+    }//GEN-LAST:event_txtcontactActionPerformed
 
     private void txtgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtgenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtgenderActionPerformed
 
-    private void txt_positionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_positionActionPerformed
+    private void txtpositionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpositionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_positionActionPerformed
+    }//GEN-LAST:event_txtpositionActionPerformed
 
     private void txtteam_infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtteam_infoActionPerformed
         // TODO add your handling code here:
@@ -306,16 +308,61 @@ public class create_employee_panel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdateActionPerformed
 
-    private void txtlabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlabelActionPerformed
+    private void txtlevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlevelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtlabelActionPerformed
+    }//GEN-LAST:event_txtlevelActionPerformed
 
-    private void txt_email1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_email1ActionPerformed
+    private void txtphotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtphotoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_email1ActionPerformed
+    }//GEN-LAST:event_txtphotoActionPerformed
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
         // TODO add your handling code here:
+        String name = txtname.getText();
+        int employee_id = Integer.parseInt(txte_id.getText());
+        int age = Integer.parseInt(txtage.getText());
+        String gender = txtgender.getText(); 
+        String date = txtdate.getText();
+        int level = Integer.parseInt(txtlevel.getText());
+        String team_info = txtteam_info.getText();
+        String position_title = txtposition.getText();
+        String cell_no = txtcontact.getText();
+        String email = txtemail.getText();
+        String photo = txtphoto.getText();
+        
+        Employee emp = history.addNewEmployee();
+        
+        emp.setName(name);
+        emp.setEmployee_id(employee_id);
+        emp.setAge(age);
+        emp.setGender(gender);
+        emp.setDate(date);
+        emp.setLevel(level);
+        emp.setTeam_info(team_info);
+        emp.setPosition_title(position_title);
+        emp.setCell_no(cell_no);
+        emp.setEmail(email);
+        emp.setPhoto(photo);
+        
+        JOptionPane.showMessageDialog(this, "New Employee added.");
+        
+        txtname.setText("");
+        txte_id.setText("");
+        txtage.setText("");
+        txtgender.setText("");
+        txtdate.setText("");
+        txtlevel.setText("");
+        txtteam_info.setText("");
+        txtposition.setText("");
+        txtcontact.setText("");
+        txtemail.setText("");
+        txtphoto.setText("");
+          
+                
+        
+        
+
+        
     }//GEN-LAST:event_btnsaveActionPerformed
 
 
@@ -333,16 +380,16 @@ public class create_employee_panel extends javax.swing.JPanel {
     private javax.swing.JLabel lblteam_info;
     private javax.swing.JLabel lblteam_info1;
     private javax.swing.JLabel lbltitle;
-    private javax.swing.JTextField txt_contact;
-    private javax.swing.JTextField txt_email;
-    private javax.swing.JTextField txt_email1;
-    private javax.swing.JTextField txt_position;
     private javax.swing.JTextField txtage;
+    private javax.swing.JTextField txtcontact;
     private javax.swing.JTextField txtdate;
     private javax.swing.JTextField txte_id;
+    private javax.swing.JTextField txtemail;
     private javax.swing.JTextField txtgender;
-    private javax.swing.JTextField txtlabel;
+    private javax.swing.JTextField txtlevel;
     private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtphoto;
+    private javax.swing.JTextField txtposition;
     private javax.swing.JTextField txtteam_info;
     // End of variables declaration//GEN-END:variables
 }

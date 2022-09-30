@@ -23,5 +23,10 @@ public class EmployeeHistory {
     public void setHistory(ArrayList<Employee> history) {
         this.history = history;
     }
+    public Employee addNewEmployee(){
+        Employee  newEmployee = new Employee();
+        history.add(newEmployee);
+        return newEmployee;
+    }
     
 }

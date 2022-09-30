@@ -13,12 +13,14 @@ public class Employee {
     private String name;
     private int employee_id;
     private int age;
+    private String gender;
     private String date;
     private int level;
     private String team_info;
     private String position_title;
-    private int cell_no;
+    private String cell_no;
     private String email;
+    private String photo;
 
     public String getName() {
         return name;
@@ -42,6 +44,14 @@ public class Employee {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getDate() {
@@ -76,11 +86,11 @@ public class Employee {
         this.position_title = position_title;
     }
 
-    public int getCell_no() {
+    public String getCell_no() {
         return cell_no;
     }
 
-    public void setCell_no(int cell_no) {
+    public void setCell_no(String cell_no) {
         this.cell_no = cell_no;
     }
 
@@ -90,6 +100,14 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
     
     

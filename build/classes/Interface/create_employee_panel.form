@@ -72,12 +72,12 @@
                   <Component id="txtage" alignment="0" max="32767" attributes="0"/>
                   <Component id="txtgender" alignment="0" max="32767" attributes="0"/>
                   <Component id="txtdate" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtlabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtlevel" alignment="0" max="32767" attributes="0"/>
                   <Component id="txtteam_info" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txt_position" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txt_contact" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txt_email" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txt_email1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtposition" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtcontact" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtemail" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtphoto" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
           </Group>
@@ -121,7 +121,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="lbl_level" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtlabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtlevel" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -131,22 +131,22 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblteam_info1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_position" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtposition" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblcontact" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="txt_contact" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtcontact" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txt_email" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtemail" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblemail" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbl_position" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_email1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtphoto" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Component id="btnsave" min="-2" max="-2" attributes="0"/>
@@ -202,7 +202,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_position">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Position"/>
+        <Property name="text" type="java.lang.String" value="Photo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblcontact">
@@ -225,9 +225,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txte_idActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_email">
+    <Component class="javax.swing.JTextField" name="txtemail">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_emailActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtemailActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtage">
@@ -235,9 +235,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtageActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_contact">
+    <Component class="javax.swing.JTextField" name="txtcontact">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_contactActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtcontactActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtgender">
@@ -245,9 +245,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtgenderActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_position">
+    <Component class="javax.swing.JTextField" name="txtposition">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_positionActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtpositionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtteam_info">
@@ -260,9 +260,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtdateActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtlabel">
+    <Component class="javax.swing.JTextField" name="txtlevel">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtlabelActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtlevelActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblteam_info1">
@@ -270,9 +270,9 @@
         <Property name="text" type="java.lang.String" value="Position Title"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_email1">
+    <Component class="javax.swing.JTextField" name="txtphoto">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_email1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtphotoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnsave">
