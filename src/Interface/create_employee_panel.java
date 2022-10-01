@@ -337,7 +337,9 @@ public class create_employee_panel extends javax.swing.JPanel {
         String email = txtemail.getText();
         String photo = txtphoto.getText();
         
-       
+       if( !name.isEmpty() && !gender.isEmpty() && !date.isEmpty()
+               && !team_info.isEmpty() && !position_title.isEmpty() 
+               && !cell_no.isEmpty() && !email.isEmpty()){
         
         Employee emp = history.addNewEmployee();
         
@@ -366,6 +368,23 @@ public class create_employee_panel extends javax.swing.JPanel {
         txtcontact.setText("");
         txtemail.setText("");
         txtphoto.setText("");
+       }else{
+           txtname.setText("");
+        txte_id.setText("");
+        txtage.setText("");
+        txtgender.setText("");
+        txtdate.setText("");
+        txtlevel.setText("");
+        txtteam_info.setText("");
+        txtposition.setText("");
+        txtcontact.setText("");
+        txtemail.setText("");
+        txtphoto.setText("");
+        
+            JOptionPane.showMessageDialog(this, "No field can be empty.");
+    
+           
+       }
           
                 
         
