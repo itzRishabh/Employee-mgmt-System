@@ -337,6 +337,8 @@ public class create_employee_panel extends javax.swing.JPanel {
         String email = txtemail.getText();
         String photo = txtphoto.getText();
         
+       
+        
         Employee emp = history.addNewEmployee();
         
         emp.setName(name);
