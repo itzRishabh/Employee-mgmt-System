@@ -393,8 +393,45 @@ public class Readjpanel extends javax.swing.JPanel {
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblemployee.getModel();
+        if(tblemployee.getSelectedRowCount()==1){
+        String name =txtname.getText();
+        int employee_id = Integer.parseInt(txte_id.getText());
+        int age = Integer.parseInt(txtage.getText());
+        String gender =txtgender.getText();
+        String date =txtdate.getText();
+        String level =txtlevel.getText();
+        String team_info =txtteam_info.getText();
+        String position =txtposition.getText();
+        String cell_no =txtcontact.getText();
+        String email =txtemail.getText();
+        
+        model.setValueAt(name, tblemployee.getSelectedRow(), 0);
+        model.setValueAt(employee_id, tblemployee.getSelectedRow(), 1);
+        model.setValueAt(age, tblemployee.getSelectedRow(), 2);
+        model.setValueAt(gender, tblemployee.getSelectedRow(), 3);
+        model.setValueAt(date, tblemployee.getSelectedRow(), 4);
+        model.setValueAt(level, tblemployee.getSelectedRow(), 5);
+        model.setValueAt(team_info, tblemployee.getSelectedRow(), 6);
+        model.setValueAt(position, tblemployee.getSelectedRow(), 7);
+        model.setValueAt(cell_no, tblemployee.getSelectedRow(), 8);
+        model.setValueAt(email, tblemployee.getSelectedRow(), 9);
+       
+        JOptionPane.showMessageDialog(this, "Selected row was updated successfully.");
+    
+        }else{
+            if(tblemployee.getSelectedRowCount()==0){
+            JOptionPane.showMessageDialog(this, "Table ss empty.");
+            }else{
+            JOptionPane.showMessageDialog(this, "Please select a row to update.");
+
+            }
+        }
+        
     }//GEN-LAST:event_btnupdateActionPerformed
 
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btndelete;
