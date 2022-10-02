@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class EmployeeHistory {
     private ArrayList<Employee> history;
     public EmployeeHistory(){
-        this.history= new ArrayList<Employee>();
+        this.history= new ArrayList<>();
     }
 
     public ArrayList<Employee> getHistory() {

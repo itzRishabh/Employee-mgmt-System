@@ -112,7 +112,7 @@ public class Employee {
     
     @Override
     public String toString(){
-        return date;
+        return name;
     }
     
     
