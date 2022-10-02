@@ -4,6 +4,9 @@
  */
 package Model;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author 91983
@@ -20,7 +23,7 @@ public class Employee {
     private String position_title;
     private String cell_no;
     private String email;
-    private String photo;
+    private ImageIcon photo;
 
     public String getName() {
         return name;
@@ -102,13 +105,15 @@ public class Employee {
         this.email = email;
     }
 
-    public String getPhoto() {
+    public ImageIcon getPhoto(int width, int height, int SCALE_SMOOTH) {
         return photo;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setPhoto(Icon photo) {
+        this.photo = (ImageIcon) photo;
     }
+    
+   
     
     @Override
     public String toString(){
