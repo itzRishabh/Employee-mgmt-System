@@ -406,7 +406,7 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnupdateimage">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Upload Photo"/>
+        <Property name="text" type="java.lang.String" value="Update Photo"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnupdateimageActionPerformed"/>

@@ -358,10 +358,41 @@ public class create_employee_panel extends javax.swing.JPanel {
         String email = txtemail.getText();
         Icon photo = lblphoto.getIcon();
         
-       if( !name.isEmpty() && !gender.isEmpty() && !date.isEmpty()
-               && !team_info.isEmpty() && !position_title.isEmpty() 
-               && !cell_no.isEmpty() && !email.isEmpty()){
-        
+       if( name.isEmpty() && String.valueOf(employee_id).isEmpty() 
+               || String.valueOf(age).isEmpty() || gender.isEmpty()
+               || date.isEmpty() || String.valueOf(level).isEmpty()
+               || team_info.isEmpty() || position_title.isEmpty() 
+               || cell_no.isEmpty() || email.isEmpty()){
+        txtname.setText("");
+        txte_id.setText("");
+        txtage.setText("");
+        txtgender.setText("");
+        txtdate.setText("");
+        txtlevel.setText("");
+        txtteam_info.setText("");
+        txtposition.setText("");
+        txtcontact.setText("");
+        txtemail.setText("");
+        genderbox.setSelectedIndex(-1);
+        lblphoto.setIcon(null);
+ 
+       
+                   JOptionPane.showMessageDialog(this, "No Fields should be Empty.");
+       }
+       else if(age<18){
+                   JOptionPane.showMessageDialog(this, "Age should be above 18","Error",JOptionPane.ERROR_MESSAGE);
+                   txtage.setText("");
+       }
+       else if(cell_no.length()<10){
+                    JOptionPane.showMessageDialog(this, "Length of contact should be 10 ","Error",JOptionPane.ERROR_MESSAGE);
+                    txtcontact.setText("");
+       }
+       else if(!(email.contains("@") && email.contains("."))){
+                    JOptionPane.showMessageDialog(this, "Email address must conati '@' & '.' ","Error",JOptionPane.ERROR_MESSAGE);
+                    txtemail.setText("");
+       }
+       
+       else{ 
         Employee emp = history.addNewEmployee();
         
         emp.setName(name);
@@ -377,6 +408,9 @@ public class create_employee_panel extends javax.swing.JPanel {
         emp.setPhoto((ImageIcon) photo);
         
         JOptionPane.showMessageDialog(this, "New Employee added.");
+       
+    
+    
         
         txtname.setText("");
         txte_id.setText("");
@@ -390,22 +424,6 @@ public class create_employee_panel extends javax.swing.JPanel {
         txtemail.setText("");
         genderbox.setSelectedIndex(-1);
         lblphoto.setIcon(null);
-       }else{
-        txtname.setText("");
-        txte_id.setText("");
-        txtage.setText("");
-        txtgender.setText("");
-        txtdate.setText("");
-        txtlevel.setText("");
-        txtteam_info.setText("");
-        txtposition.setText("");
-        txtcontact.setText("");
-        txtemail.setText("");
-        genderbox.setSelectedIndex(-1);
-        lblphoto.setIcon(null);
-            JOptionPane.showMessageDialog(this, "No field can be empty.");
-    
-           
        }
           
                 

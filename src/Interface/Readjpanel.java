@@ -203,7 +203,7 @@ public class Readjpanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Photo");
 
-        btnupdateimage.setText("Upload Photo");
+        btnupdateimage.setText("Update Photo");
         btnupdateimage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnupdateimageActionPerformed(evt);
@@ -422,6 +422,19 @@ public class Readjpanel extends javax.swing.JPanel {
          JOptionPane.showMessageDialog(this, "Employee deleted.");
          
          populateTable();
+         
+        txtname.setText("");
+        txte_id.setText("");
+        txtage.setText("");
+        txtgender.setText("");
+        txtdate.setText("");
+        txtlevel.setText("");
+        txtteam_info.setText("");
+        txtposition.setText("");
+        txtcontact.setText("");
+        txtemail.setText("");
+        lblphoto.setIcon(null);
+       
 
 
     }//GEN-LAST:event_btndeleteActionPerformed
