@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 public class Employee {
     
     private String name;
-    private int employee_id;
-    private int age;
+    private String employee_id;
+    private String age;
     private String gender;
     private String date;
-    private int level;
+    private String level;
     private String team_info;
     private String position_title;
     private String cell_no;
@@ -33,21 +33,23 @@ public class Employee {
         this.name = name;
     }
 
-    public int getEmployee_id() {
+    public String getEmployee_id() {
         return employee_id;
     }
 
-    public void setEmployee_id(int employee_id) {
+    public void setEmployee_id(String employee_id) {
         this.employee_id = employee_id;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
+
+    
 
     public String getGender() {
         return gender;
@@ -65,14 +67,15 @@ public class Employee {
         this.date = date;
     }
 
-    public int getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
+   
     public String getTeam_info() {
         return team_info;
     }

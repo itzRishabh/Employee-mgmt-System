@@ -444,8 +444,8 @@ public class Readjpanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblemployee.getModel();
         if(tblemployee.getSelectedRowCount()==1){
         String name =txtname.getText();
-        int employee_id = Integer.parseInt(txte_id.getText());
-        int age = Integer.parseInt(txtage.getText());
+        String employee_id = txte_id.getText();
+        String age =txtage.getText();
         String gender =txtgender.getText();
         String date =txtdate.getText();
         String level =txtlevel.getText();
@@ -455,6 +455,52 @@ public class Readjpanel extends javax.swing.JPanel {
         String email =txtemail.getText();
         Icon photo = lblphoto.getIcon();
         
+          if( name.isEmpty() && employee_id.isEmpty() 
+               || age.isEmpty() || gender.isEmpty()
+               || date.isEmpty() || level.isEmpty()
+               || team_info.isEmpty() || position.isEmpty() 
+               || cell_no.isEmpty() || email.isEmpty()){
+        txtname.setText("");
+        txte_id.setText("");
+        txtage.setText("");
+        txtgender.setText("");
+        txtdate.setText("");
+        txtlevel.setText("");
+        txtteam_info.setText("");
+        txtposition.setText("");
+        txtcontact.setText("");
+        txtemail.setText("");
+        lblphoto.setIcon(null);
+ 
+       
+                   JOptionPane.showMessageDialog(this, "No Fields should be Empty.");
+       }
+       else if(Integer.parseInt(age)<18){
+                   JOptionPane.showMessageDialog(this, "Age should be above 18","Error",JOptionPane.ERROR_MESSAGE);
+                   txtage.setText("");
+       }
+        else if(!gender.equalsIgnoreCase("Male") || !gender.equalsIgnoreCase("Female") || !gender.equalsIgnoreCase("Others")){
+                   JOptionPane.showMessageDialog(this, "Gender can only be 'Male','Female' and 'Others' ","Error",JOptionPane.ERROR_MESSAGE);
+                   txtgender.setText("");
+       }
+       else if(cell_no.length()<10){
+                    JOptionPane.showMessageDialog(this, "Length of contact should be 10 ","Error",JOptionPane.ERROR_MESSAGE);
+                    txtcontact.setText("");       
+       }
+        else if(cell_no.length()>10){
+                    JOptionPane.showMessageDialog(this, "Length of contact should be 10 ","Error",JOptionPane.ERROR_MESSAGE);
+                    txtcontact.setText("");       
+       }
+       else if(!cell_no.matches("[0-9]+") ){
+                    JOptionPane.showMessageDialog(this, "Contact must only contain numeric value ","Error",JOptionPane.ERROR_MESSAGE);
+                    txtcontact.setText("");       
+       }
+       else if(!(email.contains("@") && email.contains("."))){
+                    JOptionPane.showMessageDialog(this, "Email address must conati '@' & '.' ","Error",JOptionPane.ERROR_MESSAGE);
+                    txtemail.setText("");
+       }
+       
+       else{
         model.setValueAt(name, tblemployee.getSelectedRow(), 0);
         model.setValueAt(employee_id, tblemployee.getSelectedRow(), 1);
         model.setValueAt(age, tblemployee.getSelectedRow(), 2);
@@ -467,7 +513,7 @@ public class Readjpanel extends javax.swing.JPanel {
         model.setValueAt(email, tblemployee.getSelectedRow(), 9);
        
         JOptionPane.showMessageDialog(this, "Selected row was updated successfully.");
-    
+        }
         }else{
             if(tblemployee.getSelectedRowCount()==0){
             JOptionPane.showMessageDialog(this, "Table ss empty.");

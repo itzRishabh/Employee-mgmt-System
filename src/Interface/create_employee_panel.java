@@ -347,20 +347,20 @@ public class create_employee_panel extends javax.swing.JPanel {
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
          // TODO add your handling code here:
         String name = txtname.getText();
-        int employee_id = Integer.parseInt(txte_id.getText());
-        int age = Integer.parseInt(txtage.getText());
+        String employee_id = txte_id.getText();
+        String age = txtage.getText();
         String gender = txtgender.getText(); 
         String date = txtdate.getText();
-        int level = Integer.parseInt(txtlevel.getText());
+        String level = txtlevel.getText();
         String team_info = txtteam_info.getText();
         String position_title = txtposition.getText();
         String cell_no = txtcontact.getText();
         String email = txtemail.getText();
         Icon photo = lblphoto.getIcon();
         
-       if( name.isEmpty() && String.valueOf(employee_id).isEmpty() 
-               || String.valueOf(age).isEmpty() || gender.isEmpty()
-               || date.isEmpty() || String.valueOf(level).isEmpty()
+       if( name.isEmpty() && employee_id.isEmpty() 
+               || age.isEmpty() || gender.isEmpty()
+               || date.isEmpty() || level.isEmpty()
                || team_info.isEmpty() || position_title.isEmpty() 
                || cell_no.isEmpty() || email.isEmpty()){
         txtname.setText("");
@@ -379,13 +379,21 @@ public class create_employee_panel extends javax.swing.JPanel {
        
                    JOptionPane.showMessageDialog(this, "No Fields should be Empty.");
        }
-       else if(age<18){
+       else if(Integer.parseInt(age)<18){
                    JOptionPane.showMessageDialog(this, "Age should be above 18","Error",JOptionPane.ERROR_MESSAGE);
                    txtage.setText("");
        }
        else if(cell_no.length()<10){
                     JOptionPane.showMessageDialog(this, "Length of contact should be 10 ","Error",JOptionPane.ERROR_MESSAGE);
-                    txtcontact.setText("");
+                    txtcontact.setText("");       
+       }
+        else if(cell_no.length()>10){
+                    JOptionPane.showMessageDialog(this, "Length of contact should be 10 ","Error",JOptionPane.ERROR_MESSAGE);
+                    txtcontact.setText("");       
+       }
+       else if(!cell_no.matches("[0-9]+") ){
+                    JOptionPane.showMessageDialog(this, "Contact must only contain numeric value ","Error",JOptionPane.ERROR_MESSAGE);
+                    txtcontact.setText("");       
        }
        else if(!(email.contains("@") && email.contains("."))){
                     JOptionPane.showMessageDialog(this, "Email address must conati '@' & '.' ","Error",JOptionPane.ERROR_MESSAGE);
