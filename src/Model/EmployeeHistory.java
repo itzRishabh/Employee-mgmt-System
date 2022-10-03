@@ -32,5 +32,8 @@ public class EmployeeHistory {
     public void deleteEmployees(Employee emp) {
         history.remove(emp);
     }
-    
+    public Employee updatedNewEmployee(Employee emp,int rowIndex){
+        history.set(rowIndex,emp);
+        return emp;
+    }
 }

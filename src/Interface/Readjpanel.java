@@ -221,7 +221,6 @@ public class Readjpanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblname, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -285,7 +284,10 @@ public class Readjpanel extends javax.swing.JPanel {
                                 .addGap(353, 353, 353))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(lblphoto, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(321, 321, 321))))))
+                                .addGap(321, 321, 321))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -383,7 +385,7 @@ public class Readjpanel extends javax.swing.JPanel {
         // TODO add your handling code here:
        int selectedRowIndex = tblemployee.getSelectedRow();
        if(selectedRowIndex<0){
-          JOptionPane.showMessageDialog(this, "Please select a row to delete.");
+          JOptionPane.showMessageDialog(this, "Please select a row to view.");
           return;
            
         }
@@ -441,7 +443,15 @@ public class Readjpanel extends javax.swing.JPanel {
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) tblemployee.getModel();
+        int selectedRowIndex = tblemployee.getSelectedRow();
+       if(selectedRowIndex<0){
+          JOptionPane.showMessageDialog(this, "Please update all the fields.");
+          return;
+           
+        }
+         DefaultTableModel model = (DefaultTableModel) tblemployee.getModel();
+         Employee selectedEmployees =(Employee) model.getValueAt(selectedRowIndex , 0);
+
         if(tblemployee.getSelectedRowCount()==1){
         String name =txtname.getText();
         String employee_id = txte_id.getText();
@@ -454,6 +464,18 @@ public class Readjpanel extends javax.swing.JPanel {
         String cell_no =txtcontact.getText();
         String email =txtemail.getText();
         Icon photo = lblphoto.getIcon();
+        
+        selectedEmployees.setName(name);
+        selectedEmployees.setEmployee_id(employee_id);
+        selectedEmployees.setAge(age);
+        selectedEmployees.setGender(gender);
+        selectedEmployees.setDate(date);
+        selectedEmployees.setLevel(level);
+        selectedEmployees.setTeam_info(team_info);
+        selectedEmployees.setPosition_title(position);
+        selectedEmployees.setCell_no(cell_no);
+        selectedEmployees.setEmail(email);
+                
         
           if( name.isEmpty() && employee_id.isEmpty() 
                || age.isEmpty() || gender.isEmpty()
@@ -475,11 +497,15 @@ public class Readjpanel extends javax.swing.JPanel {
        
                    JOptionPane.showMessageDialog(this, "No Fields should be Empty.");
        }
+           else if(!age.matches("[0-9]+")){
+                    JOptionPane.showMessageDialog(this, "Age must only contain numeric value ","Error",JOptionPane.ERROR_MESSAGE);
+                    txtage.setText("");       
+       }
        else if(Integer.parseInt(age)<18){
                    JOptionPane.showMessageDialog(this, "Age should be above 18","Error",JOptionPane.ERROR_MESSAGE);
                    txtage.setText("");
        }
-        else if(!gender.equalsIgnoreCase("Male") || !gender.equalsIgnoreCase("Female") || !gender.equalsIgnoreCase("Others")){
+        else if(!gender.contentEquals("Male") && !gender.contentEquals("Female") && !gender.contentEquals("Others")){
                    JOptionPane.showMessageDialog(this, "Gender can only be 'Male','Female' and 'Others' ","Error",JOptionPane.ERROR_MESSAGE);
                    txtgender.setText("");
        }
@@ -495,28 +521,20 @@ public class Readjpanel extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(this, "Contact must only contain numeric value ","Error",JOptionPane.ERROR_MESSAGE);
                     txtcontact.setText("");       
        }
+      
        else if(!(email.contains("@") && email.contains("."))){
                     JOptionPane.showMessageDialog(this, "Email address must conati '@' & '.' ","Error",JOptionPane.ERROR_MESSAGE);
                     txtemail.setText("");
        }
        
        else{
-        model.setValueAt(name, tblemployee.getSelectedRow(), 0);
-        model.setValueAt(employee_id, tblemployee.getSelectedRow(), 1);
-        model.setValueAt(age, tblemployee.getSelectedRow(), 2);
-        model.setValueAt(gender, tblemployee.getSelectedRow(), 3);
-        model.setValueAt(date, tblemployee.getSelectedRow(), 4);
-        model.setValueAt(level, tblemployee.getSelectedRow(), 5);
-        model.setValueAt(team_info, tblemployee.getSelectedRow(), 6);
-        model.setValueAt(position, tblemployee.getSelectedRow(), 7);
-        model.setValueAt(cell_no, tblemployee.getSelectedRow(), 8);
-        model.setValueAt(email, tblemployee.getSelectedRow(), 9);
-       
+        history.updatedNewEmployee(selectedEmployees, selectedRowIndex);
+        populateTable();
         JOptionPane.showMessageDialog(this, "Selected row was updated successfully.");
         }
         }else{
             if(tblemployee.getSelectedRowCount()==0){
-            JOptionPane.showMessageDialog(this, "Table ss empty.");
+            JOptionPane.showMessageDialog(this, "No fields can be empty .");
             }else{
             JOptionPane.showMessageDialog(this, "Please select a row to update.");
 
@@ -534,7 +552,7 @@ public class Readjpanel extends javax.swing.JPanel {
         if(showOpenDialog == JFileChooser.APPROVE_OPTION){
             File selectedImageFile = browseImageFile.getSelectedFile();
             String selectedImagePath = selectedImageFile.getAbsolutePath();
-            JOptionPane.showMessageDialog(null,"Image is Uploaded");
+            JOptionPane.showMessageDialog(null,"Image is Updated");
             
             ImageIcon ii=new ImageIcon(selectedImagePath);
             Image ei = (ii).getImage().getScaledInstance(lblphoto.getWidth(), lblphoto.getHeight(), Image.SCALE_SMOOTH);
