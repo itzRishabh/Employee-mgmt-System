@@ -465,16 +465,6 @@ public class Readjpanel extends javax.swing.JPanel {
         String email =txtemail.getText();
         Icon photo = lblphoto.getIcon();
         
-        selectedEmployees.setName(name);
-        selectedEmployees.setEmployee_id(employee_id);
-        selectedEmployees.setAge(age);
-        selectedEmployees.setGender(gender);
-        selectedEmployees.setDate(date);
-        selectedEmployees.setLevel(level);
-        selectedEmployees.setTeam_info(team_info);
-        selectedEmployees.setPosition_title(position);
-        selectedEmployees.setCell_no(cell_no);
-        selectedEmployees.setEmail(email);
                 
         
           if( name.isEmpty() && employee_id.isEmpty() 
@@ -528,6 +518,17 @@ public class Readjpanel extends javax.swing.JPanel {
        }
        
        else{
+        selectedEmployees.setName(name);
+        selectedEmployees.setEmployee_id(employee_id);
+        selectedEmployees.setAge(age);
+        selectedEmployees.setGender(gender);
+        selectedEmployees.setDate(date);
+        selectedEmployees.setLevel(level);
+        selectedEmployees.setTeam_info(team_info);
+        selectedEmployees.setPosition_title(position);
+        selectedEmployees.setCell_no(cell_no);
+        selectedEmployees.setEmail(email);
+        
         history.updatedNewEmployee(selectedEmployees, selectedRowIndex);
         populateTable();
         JOptionPane.showMessageDialog(this, "Selected row was updated successfully.");
